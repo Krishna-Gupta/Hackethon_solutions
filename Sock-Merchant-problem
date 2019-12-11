@@ -75,6 +75,6 @@ function sockMerchant($n, $ar) {
     return $sum;
 }
 
-
+In both Solution Time Complexity: O(2n)
 
 
