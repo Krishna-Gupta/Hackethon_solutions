@@ -99,8 +99,20 @@ function sockMerchant($n, $ar) {
 
 
 
-
-
+PYTHON3 Solution : 
+def sockMerchant(n, ar):
+    sum=0
+    passed = []
+    for x in ar:
+        if x != "":
+            if x in passed:
+                sum+=1
+                passed.remove(x)
+            else:
+                passed.append(x)
+        else:
+            passed.append(x)
+    return sum
 
 
 
