@@ -63,7 +63,7 @@ function sockMerchant($n, $ar) {
 }
 
 
-Method 1 - Using In-built function : 
+Method 2 - Using In-built function : 
 // Complete the sockMerchant function below.
 function sockMerchant($n, $ar) {
     $sum = 0;
@@ -76,5 +76,31 @@ function sockMerchant($n, $ar) {
 }
 
 In both Solution Time Complexity: O(2n)
+
+
+
+Optimized Solution : PHP
+
+function sockMerchant($n, $ar) {
+    $sum = 0;
+    $passed = [];
+    for($i=0; $i < $n; $i++) {
+        if(!empty($passed)) {
+            if (array_key_exists($ar[$i], $passed)) {
+                $sum++;
+                unset($passed[$ar[$i]]);
+            } else
+                $passed[$ar[$i]] = 1;
+        } else
+            $passed[$ar[$i]] = 1;
+    }
+    return $sum;
+}
+
+
+
+
+
+
 
 
